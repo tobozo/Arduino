@@ -8,8 +8,8 @@
 name=ESP8266 Modules
 version=1.6.4
 
-runtime.tools.xtensa-lx106-elf-gcc.path={runtime.platform.path}/tools/xtensa-lx106-elf
-runtime.tools.esptool.path={runtime.platform.path}/tools/esptool
+
+
 
 compiler.path={runtime.tools.xtensa-lx106-elf-gcc.path}/bin/
 compiler.sdk.path={runtime.platform.path}/tools/sdk
@@ -27,7 +27,7 @@ compiler.c.elf.cmd=xtensa-lx106-elf-gcc
 compiler.c.elf.libs=-lm -lgcc -lhal -lphy -lnet80211 -llwip -lwpa -lmain -lpp -lsmartconfig -lwps -lcrypto -laxtls
 
 compiler.cpp.cmd=xtensa-lx106-elf-g++
-compiler.cpp.flags=-c -Os -g -mlongcalls -mtext-section-literals -fno-exceptions -fno-rtti -falign-functions=4 -std=c++11 -MMD -ffunction-sections -fdata-sections
+compiler.cpp.flags=-c -Os -g -fno-threadsafe-statics -mlongcalls -mtext-section-literals -fno-exceptions -fno-rtti -falign-functions=4 -std=c++11 -MMD -ffunction-sections -fdata-sections
 
 compiler.as.cmd=xtensa-lx106-elf-as
 
@@ -91,7 +91,7 @@ recipe.size.regex.data=^(?:\.data|\.rodata|\.bss)\s+([0-9]+).*
 
 tools.esptool.cmd=esptool
 tools.esptool.cmd.windows=esptool.exe
-tools.esptool.path={runtime.platform.path}/tools/esptool
+tools.esptool.path={runtime.tools.esptool.path}
 tools.esptool.network_cmd=python
 tools.esptool.network_cmd.windows=python.exe
 
@@ -103,7 +103,7 @@ tools.esptool.upload.network_pattern="{network_cmd}" "{runtime.platform.path}/to
 
 tools.mkspiffs.cmd=mkspiffs
 tools.mkspiffs.cmd.windows=mkspiffs.exe
-tools.mkspiffs.path={runtime.platform.path}/tools/mkspiffs
+tools.mkspiffs.path={runtime.tools.mkspiffs.path}
 
 tools.espota.cmd=python
 tools.espota.cmd.windows=python.exe
