@@ -447,4 +447,9 @@ bool wifi_wps_start(void);
 typedef void (*wps_st_cb_t)(int status);
 bool wifi_set_wps_cb(wps_st_cb_t cb);
 
+typedef void (*freedom_outside_cb_t)(uint8 status);
+int wifi_register_send_pkt_freedom_cb(freedom_outside_cb_t cb);
+void wifi_unregister_send_pkt_freedom_cb(void);
+int wifi_send_pkt_freedom(uint8 *buf, int len, bool sys_seq);
+
 #endif
