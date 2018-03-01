@@ -2,9 +2,8 @@
 
 **Please do not confuse this with the main [ESP8266/Arduino](https://github.com/esp8266/Arduino) project.**
 
-This package is using a pre-baked version of the SDK with all necessary libraries and patches for the [Deauther](https://github.com/spacehuhn/esp8266_deauther).
-The setup is deployed in a separate folder structure from the esp8266 sdk structure, so you can use the
-sdk2.0.0-deauther and the sdk2.3.0 (or any other version) altogether without interferences.
+This package is using a pre-baked version of the SDK with all necessary libraries and patches for the [Deauther](https://github.com/spacehuhn/esp8266_deauther).  
+The setup is deployed in a separate folder structure from the esp8266 sdk structure, so you can use the sdk2.0.0-deauther and the sdk2.3.0 (or any other version) altogether without interferences.
 
 ## Changes
 - based on Arduino ESP8266 SDK 2.0.0
@@ -21,9 +20,13 @@ void wifi_unregister_send_pkt_freedom_cb(void);
 int wifi_send_pkt_freedom(uint8 *buf, int len, bool sys_seq);
 ```
 
+## Known Issues
+### Compiler Warning because of dublicated libraries
+Because the SDK includes other Arduino Libraries that you might already have installed, you can get warnings when compiling. Those warnings are usually no errors and shouldn't keep you from compiling. If they do, check the errored libraries and maybe uninstall or temporarily remove them so they don't conflict with the SDK libraries.  
+
 ## Usage
 
-### The easy way
+### The easy way (for users)
 
 1) In Arduino go to File -> Preferences add this URL `http://phpsecu.re/esp8266/package_deauther_index.json` at *Additional Boards Manager URLs*
 ![adding board url](https://raw.githubusercontent.com/tobozo/Arduino/deauther/screenshots/board_manager_urls.jpg)
@@ -31,13 +34,13 @@ int wifi_send_pkt_freedom(uint8 *buf, int len, bool sys_seq);
 2) Go to Tools -> Board -> Boards Manager, search "esp8266" and install `arduino-esp8266-deauther`
 ![installing sdk](https://raw.githubusercontent.com/tobozo/Arduino/deauther/screenshots/board_manager_sdk.jpg)
 
-3) Select your board at Tools -> Board and be sure it is at `ESP8266 Deauther Modules` (and **not** at `ESP8266 Modules`)!.
+3) Select your board at Tools -> Board and be sure it is at `ESP8266 Deauther Modules` (and **not** at `ESP8266 Modules`)!
 ![select board](https://raw.githubusercontent.com/tobozo/Arduino/deauther/screenshots/screenshot_select_board.jpg)
    
 
-### The hard way
+### The hard way (for developers)
 
-1) Follow the manual [SDK fix tutorial](https://github.com/tobozo/Arduino/blob/deauther/sdk_fix/README.md) until you can successfully compile the [esp8266_deauther](http://github.com/spacehuhn/esp8266_deauther)
+1) Follow the [SDK fix tutorial](https://github.com/tobozo/Arduino/blob/deauther/sdk_fix/README.md) until you can successfully compile the [esp8266_deauther](http://github.com/spacehuhn/esp8266_deauther)
 2) Make sure all imported libraries (i.e. arduinoJson, LinkedList) are in the `packages/esp8266/hardware/esp8266/2.0.0/libraries/` folder 
 3) Navigate inside the SDK directory `cd packages/esp8266/hardware/esp8266/`
 4) Make a renamed copy of the sdk2.0.0 folder`cp -R 2.0.0 esp8266-2.0.0`
