@@ -23,7 +23,7 @@ dstike.build.mcu=esp8266
 dstike.build.f_cpu=80000000L
 dstike.build.board=ESP8266_ESP01
 dstike.build.core=esp8266
-dstike.build.variant=generic
+dstike.build.variant=dstike
 dstike.build.flash_mode=qio
 dstike.build.spiffs_pagesize=256
 
