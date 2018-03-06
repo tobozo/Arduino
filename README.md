@@ -12,6 +12,7 @@ The setup is deployed in a separate folder structure from the esp8266 sdk struct
 - included [ESP8266 OLED library](https://github.com/squix78/esp8266-oled-ssd1306)
 - added `-fno-threadsafe-statics` to compiler.cpp.flags in `platform.txt`
 - modified `ESP8266WiFi.cpp` and `ESP8266WiFi.h` to support scanning for hidden access points
+- modified `boards.txt` to support DSTIKE and other boards
 - added function definitions to `user_interface.h` to allow for packet injection:
 ```
 typedef void (*freedom_outside_cb_t)(uint8 status);
