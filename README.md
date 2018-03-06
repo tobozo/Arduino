@@ -22,10 +22,22 @@ int wifi_send_pkt_freedom(uint8 *buf, int len, bool sys_seq);
 ```
 
 ## Known Issues
+
 ### Compiler Warning because of dublicated libraries
 Because the SDK includes other Arduino Libraries that you might already have installed, you can get warnings when compiling. Those warnings are usually no errors and shouldn't keep you from compiling. If they do, check the errored libraries and maybe uninstall or temporarily remove them so they don't conflict with the SDK libraries.  
+The warnings appear often when you have a different error in your code. Look through all the error messages to make sure not to confuse the SDK errors with your code errors.  
 
-## Usage
+### CRC Error on installation
+When you uninstall the SDK and install it again over the boards manager and we updated the code, it will probably give you this error. But don't worry, it's easy to fix! Just click on install again and it should work.  
+It has to do with the hash of the generated .zip file.  
+
+## Update
+To update the SDK you have to reinstall it.  
+In Arduino go to Tools -> Board -> Boards Manager, search "esp8266" and remove the current Deauther SDK.  
+Now click on install, you maybe have to click install twice because of a CRC error (don't worry about that).  
+That's all!  
+
+## Installation
 
 ### The easy way (for users)
 
