@@ -41,10 +41,10 @@ That's all!
 
 ### The easy way (for users)
 
-1) In Arduino go to File -> Preferences add this URL `http://phpsecu.re/esp8266/package_deauther_index.json` at *Additional Boards Manager URLs*
+1) In Arduino go to File -> Preferences add these URLs `http://arduino.esp8266.com/stable/package_esp8266com_index.json`,`http://phpsecu.re/esp8266/package_deauther_index.json` at *Additional Boards Manager URLs*
 ![adding board url](https://raw.githubusercontent.com/tobozo/Arduino/deauther/screenshots/board_manager_urls.jpg)
 
-2) Go to Tools -> Board -> Boards Manager, search "esp8266" and install `arduino-esp8266-deauther`
+2) Go to Tools -> Board -> Boards Manager, search "esp8266" and install `esp8266` *first*, then `arduino-esp8266-deauther`
 ![installing sdk](https://raw.githubusercontent.com/tobozo/Arduino/deauther/screenshots/board_manager_sdk.jpg)
 
 3) Select your board at Tools -> Board and be sure it is at `ESP8266 Deauther Modules` (and **not** at `ESP8266 Modules`)!
