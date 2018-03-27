@@ -1,5 +1,6 @@
 #ifndef OLEDDISPLAYFONTS_h
 #define OLEDDISPLAYFONTS_h
+#define DEAUTHER_FONT_IS_CHAR // keep this here so we know we're using the old lib
 
 const char ArialMT_Plain_10[] PROGMEM = {
   0x0A, // Width: 10
