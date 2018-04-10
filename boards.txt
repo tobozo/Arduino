@@ -225,10 +225,6 @@ huzzah.menu.FlashMode.dio.build.flash_mode=dio
 huzzah.menu.FlashMode.qio=QIO
 huzzah.menu.FlashMode.qio.build.flash_mode=qio
 
-huzzah.menu.UploadTool.esptool=Serial
-huzzah.menu.UploadTool.esptool.upload.tool=esptool
-huzzah.menu.UploadTool.esptool.upload.verbose=-vv
-
 huzzah.menu.UploadSpeed.115200=115200
 huzzah.menu.UploadSpeed.115200.upload.speed=115200
 huzzah.menu.UploadSpeed.9600=9600
