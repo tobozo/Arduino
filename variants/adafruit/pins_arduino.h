@@ -66,5 +66,7 @@ static const uint8_t A0 = 17;
 #define SERIAL_PORT_HARDWARE       Serial
 #define SERIAL_PORT_HARDWARE_OPEN  Serial
 
+#define DEAUTHER_SDK_2_0_0 "spacehuhn"
+
 #endif /* Pins_Arduino_h */
 
