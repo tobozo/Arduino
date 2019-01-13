@@ -23,7 +23,7 @@ int wifi_send_pkt_freedom(uint8 *buf, int len, bool sys_seq);
 
 ## Known Issues
 
-### Compiler Warning because of dublicated libraries
+### Compiler Warning because of duplicated libraries
 Because the SDK includes other Arduino Libraries that you might already have installed, you can get warnings when compiling. Those warnings are usually no errors and shouldn't keep you from compiling. If they do, check the errored libraries and maybe uninstall or temporarily remove them so they don't conflict with the SDK libraries.  
 The warnings appear often when you have a different error in your code. Look through all the error messages to make sure not to confuse the SDK errors with your code errors.  
 
