@@ -44,19 +44,18 @@ class JsonParser {
 
   const char *parseString();
   bool parseAnythingTo(JsonVariant *destination);
-  FORCE_INLINE bool parseAnythingToUnsafe(JsonVariant *destination);
 
   inline bool parseArrayTo(JsonVariant *destination);
   inline bool parseObjectTo(JsonVariant *destination);
   inline bool parseStringTo(JsonVariant *destination);
 
-  static inline bool isInRange(char c, char min, char max) {
+  static inline bool isBetween(char c, char min, char max) {
     return min <= c && c <= max;
   }
 
-  static inline bool isLetterOrNumber(char c) {
-    return isInRange(c, '0', '9') || isInRange(c, 'a', 'z') ||
-           isInRange(c, 'A', 'Z') || c == '+' || c == '-' || c == '.';
+  static inline bool canBeInNonQuotedString(char c) {
+    return isBetween(c, '0', '9') || isBetween(c, '_', 'z') ||
+           isBetween(c, 'A', 'Z') || c == '+' || c == '-' || c == '.';
   }
 
   static inline bool isQuote(char c) {
@@ -99,5 +98,5 @@ inline typename JsonParserBuilder<TJsonBuffer, TString>::TParser makeParser(
   return JsonParserBuilder<TJsonBuffer, TString>::makeParser(buffer, json,
                                                              nestingLimit);
 }
-}
-}
+}  // namespace Internals
+}  // namespace ArduinoJson
