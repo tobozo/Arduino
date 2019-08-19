@@ -27,7 +27,7 @@ jobs:
         cp arm/package_deauther_index.json Arduino.wiki/
         cd Arduino.wiki/
         git remote rm origin
-        git remote add origin https://tobozo:${{ secrets.GITHUB_TOKEN }}@github.com/tobozo/Arduino.wiki.git
+        git remote add origin https://tobozo:${{ secrets.TOKEN }}@github.com/tobozo/Arduino.wiki.git
         git add .
         git status
         git commit -m "autocommit on wiki"
