@@ -23,9 +23,8 @@ jobs:
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.ARM.tpl.json
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.tpl.json
         php genpackage.php 
-        ls
-        ls arm
-        #wget https://github.com/tobozo/Arduino/archive/deauther.zip --output-document=deauther.zip
-        #export SHA_SUM=`sha256sum deauther.zip |cut -d' ' -f1`
-        #echo $SHA_SUM
+        echo "Generated package_deauther_index.json :"
+        cat package_deauther_index.json
+        echo "Generated ARM package_deauther_index.json :"
+        cat arm/package_deauther_index.json
 
