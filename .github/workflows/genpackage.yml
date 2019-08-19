@@ -13,6 +13,8 @@ jobs:
     
     steps:
     - name: Packager
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
       run: |
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.ARM.tpl.json
@@ -22,4 +24,12 @@ jobs:
         cat package_deauther_index.json
         echo "Generated ARM package_deauther_index.json :"
         cat arm/package_deauther_index.json
+        git clone https://github.com/tobozo/Arduino.wiki.git
+        cp -R arm Arduino.wiki/
+        cp arm/package_deauther_index.json Arduino.wiki/
+        cd Arduino.wiki/
+        git add .
+        git status
+        git commit -m "autocommit on wiki"
+
 
