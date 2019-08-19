@@ -1,6 +1,6 @@
 <?php
 
-@mkdir("arm");
+mkdir("arm");
 
 ob_start();
 file_put_contents("deauther.zip", file_get_contents("https://github.com/tobozo/Arduino/archive/deauther.zip"));
