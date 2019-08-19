@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/bin/curl@master
-    - name: Retrieve the zip from the archive using curl
-      run: "https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip"
-    - uses: actions/bin/sha256sum@master
+    #- uses: actions/bin/curl@master
+    #- name: Retrieve the zip from the archive using curl
+    #  run: "https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip"
+    #- uses: actions/bin/sha256sum@master
     - name: Run a multi-line script
       run: |
-        #curl https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip
+        wget https://github.com/tobozo/Arduino/archive/deauther.zip --output-document=deauther.zip
         export SHA_SUM=`sha256sum deauther.zip |cut -d' ' -f1`
         echo $SHA_SUM
         ls
