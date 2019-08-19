@@ -17,11 +17,13 @@ jobs:
     #  run: "https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip"
     #- uses: actions/bin/sha256sum@master
     #- uses: tobozo/Arduino@deauther
+    - uses: actions/checkout@deauther
     - name: Run a multi-line script
       run: |
-        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php
-        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.ARM.tpl.json
-        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.tpl.json
+        cd .github/scripts
+        # wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php
+        # wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.ARM.tpl.json
+        # wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.tpl.json
         php genpackage.php 
         echo "Generated package_deauther_index.json :"
         cat package_deauther_index.json
