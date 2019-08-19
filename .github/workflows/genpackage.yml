@@ -17,11 +17,7 @@ jobs:
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.ARM.tpl.json
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.tpl.json
-    #- name: Use the tool to generate the json files
-    #  run: |
         php genpackage.php
-    #- name: Print generated content
-    #  run: |
         echo "Generated package_deauther_index.json :"
         cat package_deauther_index.json
         echo "Generated ARM package_deauther_index.json :"
