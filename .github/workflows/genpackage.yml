@@ -13,10 +13,11 @@ jobs:
     
     steps:
     - uses: actions/bin/curl@master
-    #- args: ["https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip"]
+    - name: Retrieve the zip from the archive using curl
+      run: curl https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip
     - name: Run a multi-line script
       run: |
-        curl https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip
+        #curl https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip
         export SHA_SUM=`sha256sum deauther.zip |cut -d' ' -f1`
         echo $SHA_SUM
         ls
