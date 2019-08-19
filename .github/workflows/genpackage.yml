@@ -3,7 +3,6 @@ name: JSON Packages Generator
 on:
   push:
     branches:
-    - gh-actions
     - deauther
 
 jobs:
@@ -18,10 +17,10 @@ jobs:
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.ARM.tpl.json
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.tpl.json
         php genpackage.php
-        echo "Generated package_deauther_index.json :"
-        cat package_deauther_index.json
-        echo "Generated ARM package_deauther_index.json :"
-        cat arm/package_deauther_index.json
+        echo "Generated package_deauther_index.json  files"
+        # cat package_deauther_index.json
+        # echo "Generated ARM package_deauther_index.json :"
+        # cat arm/package_deauther_index.json
         git clone https://github.com/tobozo/Arduino.wiki.git
         cp -R arm Arduino.wiki/
         cp arm/package_deauther_index.json Arduino.wiki/
@@ -32,5 +31,5 @@ jobs:
         git remote add origin https://tobozo:${{ secrets.TOKEN }}@github.com/tobozo/Arduino.wiki.git
         git add .
         git status
-        git commit -m "autocommit on wiki"
+        git commit -m "JSON Packages autocommit"
         git push -u origin master
