@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/bin/curl@master
     - name: Retrieve the zip from the archive using curl
-      run: ["https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip"]
+      run: "https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip"
     - uses: actions/bin/sha256sum@master
     - name: Run a multi-line script
       run: |
