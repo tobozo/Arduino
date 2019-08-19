@@ -16,10 +16,11 @@ jobs:
     #- name: Retrieve the zip from the archive using curl
     #  run: "https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip"
     #- uses: actions/bin/sha256sum@master
-    - uses: tobozo/Arduino@deauther
+    #- uses: tobozo/Arduino@deauther
     - name: Run a multi-line script
       run: |
-        php  Arduino/.github/scripts/genpackage.php 
+        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php --output-document-genpackage.php
+        php genpackage.php 
         ls
         ls arm
         #wget https://github.com/tobozo/Arduino/archive/deauther.zip --output-document=deauther.zip
