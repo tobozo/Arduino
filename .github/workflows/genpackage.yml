@@ -19,7 +19,7 @@ jobs:
     #- uses: tobozo/Arduino@deauther
     - name: Run a multi-line script
       run: |
-        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php --output-document-genpackage.php
+        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php --output-document=genpackage.php
         php genpackage.php 
         ls
         ls arm
