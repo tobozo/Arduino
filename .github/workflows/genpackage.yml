@@ -17,15 +17,12 @@ jobs:
     #  run: "https://github.com/tobozo/Arduino/archive/deauther.zip --output deauther.zip"
     #- uses: actions/bin/sha256sum@master
     - uses: tobozo/Arduino@deauther
+    - name: Run a multi-line script
       run: |
         php  Arduino/.github/scripts/genpackage.php 
         ls
         ls arm
-    - name: Run a multi-line script
-      run: |
-        wget https://github.com/tobozo/Arduino/archive/deauther.zip --output-document=deauther.zip
-        export SHA_SUM=`sha256sum deauther.zip |cut -d' ' -f1`
-        echo $SHA_SUM
-        ls
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        #wget https://github.com/tobozo/Arduino/archive/deauther.zip --output-document=deauther.zip
+        #export SHA_SUM=`sha256sum deauther.zip |cut -d' ' -f1`
+        #echo $SHA_SUM
+
