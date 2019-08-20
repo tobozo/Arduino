@@ -41,7 +41,7 @@ That's all!
 
 ### The easy way (for users)
 
-1) In Arduino go to File -> Preferences add these URLs `http://arduino.esp8266.com/stable/package_esp8266com_index.json`,`http://phpsecu.re/esp8266/package_deauther_index.json` at *Additional Boards Manager URLs*
+1) In Arduino go to File -> Preferences add these URLs `http://arduino.esp8266.com/stable/package_esp8266com_index.json`,`https://raw.githubusercontent.com/wiki/tobozo/Arduino/package_deauther_index.json` at *Additional Boards Manager URLs*
 ![adding board url](https://raw.githubusercontent.com/tobozo/Arduino/deauther/screenshots/board_manager_urls.jpg)
 
 2) Go to Tools -> Board -> Boards Manager, search "esp8266" and install `esp8266` *first*, then `arduino-esp8266-deauther`
