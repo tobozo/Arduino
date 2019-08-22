@@ -12,6 +12,8 @@ jobs:
     
     steps:
     - name: Packager
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php
         wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.ARM.tpl.json
@@ -28,7 +30,7 @@ jobs:
         git remote rm origin
         git config --global user.email "tobozo@users.noreply.github.com"
         git config --global user.name "tobozo"
-        git remote add origin https://tobozo:${{ secrets.TOKEN }}@github.com/tobozo/Arduino.wiki.git
+        git remote add origin https://tobozo:${{ secrets.GITHUB_TOKEN }}@github.com/tobozo/Arduino.wiki.git
         git add .
         git status
         git commit -m "JSON Packages autocommit"
