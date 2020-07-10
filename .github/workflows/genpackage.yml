@@ -15,11 +15,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/genpackage.php
-        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.ARM.tpl.json
-        wget https://raw.githubusercontent.com/tobozo/Arduino/deauther/.github/scripts/package_deauther_index.tpl.json
-        php genpackage.php
-        echo "Generated package_deauther_index.json files"
+        wget https://raw.githubusercontent.com/SpacehuhnTech/arduino/main/package_spacehuhn_index.json
+        mkdir arm
+        cp package_spacehuhn_index.json arm/package_deauther_index.json
+        cp package_spacehuhn_index.json package_deauther_index.json
+        
         # cat package_deauther_index.json
         # echo "Generated ARM package_deauther_index.json :"
         # cat arm/package_deauther_index.json
