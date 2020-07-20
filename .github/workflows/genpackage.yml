@@ -1,6 +1,8 @@
 name: JSON Packages Generator
-
-on: 
+on:
+  push:
+    branches:
+    - deauther
   workflow_dispatch:
     inputs:
       logLevel:
@@ -9,11 +11,6 @@ on:
         default: 'warning'
       tags:
         description: 'Regenerate package'
-
-on:
-  push:
-    branches:
-    - deauther
 
 jobs:
   build:
